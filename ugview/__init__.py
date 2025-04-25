@@ -1,5 +1,5 @@
-from .src import reader
-from .src import viewer
+from .src.viewer import UGViewer
+from .src.reader import open_data
 
 
-__all__ = [viewer.UGViewer, reader.open_data]
+__all__ = [UGViewer, open_data]
