@@ -5,6 +5,15 @@ name = "ugview"
 requires-python = ">= 3.11"
 version = "0.1.0"
 
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
+filterwarnings = [
+    "error",
+    "ignore:Consolidated metadata is currently not part in the Zarr format 3 specification. It may not be supported by other zarr implementations and may change in the future.:UserWarning",
+]
+
 [build-system]
 build-backend = "hatchling.build"
 requires = ["hatchling"]
@@ -21,3 +30,4 @@ ugview = { path = ".", editable = true }
 [tool.pixi.dependencies]
 easygems = ">=0.0.14,<0.0.15"
 zarr = ">=3.0.7,<4"
+pytest = ">=8.3.5,<9"
