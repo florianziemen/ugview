@@ -9,11 +9,13 @@ def healpix_ds():
     # Create a sample Healpix dataset
     nside = 4
     npix = 12 * nside**2
-    data = np.arange(npix).astype(np.float32)
+    data = np.arange(npix * 2).astype(np.float32).reshape(2, npix)
+    time = np.arange(2)
 
     ds = xr.Dataset(
         {
-            "data": (("cell"), data),
+            "data": (("time", "cell"), data),
+            "time": (("time"), time),
         }
     )
     da = xr.DataArray(0)
