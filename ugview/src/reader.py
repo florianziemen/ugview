@@ -11,3 +11,10 @@ def open_data(filename):
             raise ValueError(
                 f"Cannot open file {filename} as a dataset. Also tried engine='zarr' explicitly."
             ) from ve
+    except OSError as oe:
+        try:
+            return xr.open_dataset(filename, engine="zarr")
+        except Exception:
+            raise OSError(
+                f"Cannot open file {filename} as a dataset. Also tried engine='zarr' explicitly."
+            ) from oe

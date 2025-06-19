@@ -36,6 +36,13 @@ def test_zarr(healpix_ds, zarr_file):
     assert healpix_ds.identical(ds)
 
 
+def test_remote_zarr():
+    ds = open_data(
+        "https://s3.eu-dkrz-1.dkrz.cloud/nextgems/rechunked_ngc4008/ngc4008_PT3H_0.zarr"
+    )
+    assert ds["tas"][0].mean() > 280
+
+
 def test_hidden_zarr(healpix_ds, hidden_zarr_file):
     ds = open_data(hidden_zarr_file)
     assert healpix_ds.identical(ds)
@@ -51,5 +58,5 @@ def test_open_data_invalid_file(tmp_path):
 
 def test_open_data_missing_file(tmp_path):
     missing_file = tmp_path / "missing_data.nc"
-    with pytest.raises(FileNotFoundError):
+    with pytest.raises(OSError):
         open_data(missing_file)

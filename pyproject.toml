@@ -31,3 +31,6 @@ ugview = { path = ".", editable = true }
 easygems = ">=0.0.14,<0.0.15"
 zarr = ">=3.0.7,<4"
 pytest = ">=8.3.5,<9"
+fsspec = "*"
+requests = "*"
+aiohttp = "*"
