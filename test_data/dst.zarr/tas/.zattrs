@@ -1,0 +1,13 @@
+{
+  "cell_methods": "time: mean cell: mean",
+  "component": "atmo",
+  "grid_mapping": "crs",
+  "long_name": "temperature in 2m",
+  "standard_name": "air_temperature",
+  "units": "K",
+  "vgrid": "height_2m",
+  "_ARRAY_DIMENSIONS": [
+    "time",
+    "cell"
+  ]
+}

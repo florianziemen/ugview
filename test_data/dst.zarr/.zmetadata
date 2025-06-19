@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    ".zgroup": {
+      "zarr_format": 2
+    },
+    ".zattrs": {},
+    "time/.zattrs": {
+      "axis": "T",
+      "units": "seconds since 1970-01-01",
+      "calendar": "proleptic_gregorian",
+      "_ARRAY_DIMENSIONS": [
+        "time"
+      ]
+    },
+    "time/.zarray": {
+      "shape": [
+        2
+      ],
+      "chunks": [
+        87664
+      ],
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<i8"
+    },
+    "tas/.zattrs": {
+      "cell_methods": "time: mean cell: mean",
+      "component": "atmo",
+      "grid_mapping": "crs",
+      "long_name": "temperature in 2m",
+      "standard_name": "air_temperature",
+      "units": "K",
+      "vgrid": "height_2m",
+      "_ARRAY_DIMENSIONS": [
+        "time",
+        "cell"
+      ]
+    },
+    "tas/.zarray": {
+      "shape": [
+        2,
+        48
+      ],
+      "chunks": [
+        87664,
+        48
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    }
+  },
+  "zarr_consolidated_format": 1
+}
